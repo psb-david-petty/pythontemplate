@@ -3,7 +3,6 @@
 #
 # pythontemplate.py
 #
-#
 """
 pythontemplate.py is a template that includes OptionParser-style arguments.
 """
