@@ -4,7 +4,8 @@
 # pythontemplate.py
 #
 """
-pythontemplate.py is a template that includes OptionParser-style arguments.
+pythontemplate.py is a template that includes argparse.ArgumentParser-style
+arguments in all their various forms.
 """
 
 __author__ = "David C. Petty"
@@ -18,7 +19,7 @@ __status__ = "Hack"
 import argparse, os, sys
 
 
-class OptionParser(argparse.ArgumentParser):
+class Parser(argparse.ArgumentParser):
     """Create OptionParser to parse command-line options."""
     def __init__(self, **kargs):
         argparse.ArgumentParser.__init__(self, **kargs)
@@ -36,15 +37,16 @@ class OptionParser(argparse.ArgumentParser):
 
 def main(argv):
     """This is a template that includes OptionParser-style arguments."""
-    description = """This is a template that includes OptionParser-style 
-    arguments"""
+    description = """This is a template that includes 
+    argparse.ArgumentParser-style arguments in all their various forms."""
     formatter = lambda prog: \
         argparse.ArgumentDefaultsHelpFormatter(prog, max_help_position=30)
-    parser = OptionParser(description=description, add_help=False,
-                          formatter_class=formatter)
+    parser = Parser(description=description, add_help=False,
+                    formatter_class=formatter)
     arguments = [
         # c1, c2, action, dest, default, help
         ('-a', '--arg', 'store', 'ARG', None, 'argument', ),
+        ('-m', '--mult', 'append', 'MULT', None, 'multi-argument', ),
         ('-v', '--verbose', 'store_true', 'VERBOSE', False,
          'echo status information', ),
     ]
@@ -60,6 +62,8 @@ def main(argv):
     if pa.ARG:
         os.environ['ARG'] = pa.ARG
         print(f"ARG = {pa.ARG}")
+    if pa.MULT:
+        print(f"MULT= {pa.MULT}")
     if pa.REQUIRED:
         print(f"REQ = {pa.REQUIRED}")
     if pa.OPTIONAL:
@@ -73,6 +77,7 @@ if __name__ == '__main__':
         '__file__' not in globals()
     )
     if any((is_idle, is_pycharm, is_jupyter,)):
-        main(['parsereport.py', 'REQ', 'OPT1', 'OPT2', '-a', 'FOO', ])
+        main(['parsereport.py', 'REQ', 'OPT1', 'OPT2', 'OPT3',
+              '-a', 'FOO', '-m', 'MULT1', '-m', 'MULT2', ])
     else:
         main(sys.argv)
