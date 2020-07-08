@@ -4,7 +4,7 @@ This is a template for a Python project.
 
 ## Steps to follow
 
-These steps are based on Github account `psb-david-petty` and this repository `pythontemplate` being copied into repository `newpython`. Change to match your repo.
+These steps are based on Github account `psb-david-petty` with private e-mail address `psb-david-petty@users.noreply.github.com` and with this repository `pythontemplate` being copied into repository `newpython`. Change these to match your account and repository.
 
 - Follow [https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository) to duplicate this repository `pythontemplate` to repository `newpython`.
 - Enable *GitHub Pages* for the `master` branch from *Settings*.
@@ -22,6 +22,12 @@ Host github.com-bhs
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_rsa_bhs
+  ```
+  - Add the following to `.git/config` to associate commits with the correct account name:
+  ```
+  [user]
+	    name = psb-david-petty
+	    email = psb-david-petty@users.noreply.github.com
   ```
   - Rename and edit the Python files in `./src/`.
 
