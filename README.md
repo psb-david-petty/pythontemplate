@@ -22,15 +22,14 @@ Host github.com-bhs
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_rsa_bhs
-  ```
-  - Add the following to `.git/config` to associate commits with the correct account name:
-  ```
-  [user]
-	    name = psb-david-petty
-	    email = psb-david-petty@users.noreply.github.com
-  ```
-  - Rename and edit the Python files in `./src/`.
-
+```
+- Add the following to `.git/config` to associate commits with the correct account name:
+```
+[user]
+  name = psb-david-petty
+  email = psb-david-petty@users.noreply.github.com
+```
+- Rename and edit the Python files in `./src/`.
 
 <hr>
 
