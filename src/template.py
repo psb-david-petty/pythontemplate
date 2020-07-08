@@ -10,7 +10,7 @@ pythontemplate.py is a template that includes OptionParser-style arguments.
 __author__ = "David C. Petty"
 __copyright__ = "Copyright 2020, David C. Petty"
 __license__ = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
-__version__ = "0.1.0"
+__version__ = "0.0.1"
 __maintainer__ = "David C. Petty"
 __email__ = "david_petty@psbma.org"
 __status__ = "Hack"
