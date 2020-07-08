@@ -45,7 +45,8 @@ def main(argv):
     arguments = [
         # c1, c2, action, dest, default, help
         ('-a', '--arg', 'store', 'ARG', None, 'argument', ),
-        ('-v', '--verbose', 'store_true', 'VERBOSE', False, 'echo status information', ),
+        ('-v', '--verbose', 'store_true', 'VERBOSE', False,
+         'echo status information', ),
     ]
     # Add optional arguments with values.
     for c1, c2, a, v, d, h in arguments:
