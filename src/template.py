@@ -53,9 +53,8 @@ def main(argv):
     # Add optional arguments with values.
     for c1, c2, a, v, d, h in arguments:
         parser.add_argument(c1, c2, action=a, dest=v, default=d, help=h,)
-    # Add positional arguments. REQUIRED is both the string and the variable.
+    # Add positional arguments. 'NAME' is both the string and the variable.
     parser.add_argument("REQUIRED", help="required argument")
-    # Add positional arguments. OPTIONAL is both the list and the variable.
     parser.add_argument("OPTIONAL", nargs="*", help="optional arguments")
     # Parse arguments.
     pa = parser.parse_args(args=argv[1: ])
