@@ -8,11 +8,13 @@ These steps are based on Github account `psb-david-petty` with private e-mail ad
 
 - Follow [https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository) to duplicate this repository `pythontemplate` to repository `newpython`.
 - Enable *GitHub Pages* for the `master` branch from *Settings*.
+<p style="margin: 0 1em; padding: 0 1em; border-left: thick solid red;">Note: As of 2020/10/01, the default branch for Github repositories is `main` rather than `master`. At some point, this repository should follow the [renaming guidelines](https://github.com/github/renaming) and rename the main branch.</p>
 - `git clone https://github.com/psb-david-petty/newpython.git` into the parent directory of the `newpython` local branch.
 - Change the `.git/config` `url` of the `newpython` local branch as per [`https://gist.github.com/jexchan/2351996`](https://gist.github.com/jexchan/2351996) as follows:
   - from: `url = https://github.com/psb-david-petty/newpython.git`
   - to: `url = git@github.com-bhs:psb-david-petty/newpython.git`
 - The change to `git@github.com-bhs` presupposes that `~/.ssh/` contains the files `id_rsa_bhs` and `id_rsa_bhs` and that `~/.ssh/config` contains the following:
+
 ```
 Host *
   AddKeysToAgent yes
@@ -23,12 +25,15 @@ Host github.com-bhs
   User git
   IdentityFile ~/.ssh/id_rsa_bhs
 ```
+
 - Add the following to `.git/config` to associate commits with the correct account name:
+
 ```
 [user]
   name = psb-david-petty
   email = psb-david-petty@users.noreply.github.com
 ```
+
 - Rename and edit the Python files in `./src/`.
 
 <hr>
