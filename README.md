@@ -7,8 +7,7 @@ This is a template for a Python project.
 These steps are based on Github account `psb-david-petty` with private e-mail address `psb-david-petty@users.noreply.github.com` and with this repository `pythontemplate` being copied into repository `newpython`. Change these to match your account and repository.
 
 - Follow [https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository) to duplicate this repository `pythontemplate` to repository `newpython`.
-- Enable *GitHub Pages* for the `master` branch from *Settings*.
-<p style="margin: 0 1em; padding: 0 1em; border-left: thick solid red;">Note: As of 2020/10/01, the default branch for Github repositories is `main` rather than `master`. At some point, this repository should follow the [renaming guidelines](https://github.com/github/renaming) and rename the main branch.</p>
+- Enable *GitHub Pages* for the `main` branch from *Settings*.
 - `git clone https://github.com/psb-david-petty/newpython.git` into the parent directory of the `newpython` local branch.
 - Change the `.git/config` `url` of the `newpython` local branch as per [`https://gist.github.com/jexchan/2351996`](https://gist.github.com/jexchan/2351996) as follows:
   - from: `url = https://github.com/psb-david-petty/newpython.git`
@@ -34,7 +33,7 @@ Host github.com-bhs
   email = psb-david-petty@users.noreply.github.com
 ```
 
-- Rename and edit the Python files in `./src/`.
+- Rename, edit, and delete the Python files (through `git`)  in `./src/`.
 
 <hr>
 
