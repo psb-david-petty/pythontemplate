@@ -11,7 +11,7 @@ arguments in all their various forms.
 __author__ = "David C. Petty"
 __copyright__ = "Copyright 2020, David C. Petty"
 __license__ = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __maintainer__ = "David C. Petty"
 __email__ = "david_petty@psbma.org"
 __status__ = "Hack"
@@ -45,8 +45,8 @@ def main(argv):
                     formatter_class=formatter)
     arguments = [
         # c1, c2, action, dest, default, help
-        ('-a', '--arg', 'store', 'ARG', None, 'argument', ),
-        ('-m', '--mult', 'append', 'MULT', None, 'multi-argument', ),
+        ('-a', '--arg', 'store', 'ARG', None, 'argument \u2014 multiples supersede', ),
+        ('-m', '--mult', 'append', 'MULT', None, 'multi-argument  \u2014 multiples accumulate', ),
         ('-v', '--verbose', 'store_true', 'VERBOSE', False,
          'echo status information', ),
     ]
@@ -76,7 +76,19 @@ if __name__ == '__main__':
         '__file__' not in globals()
     )
     if any((is_idle, is_pycharm, is_jupyter,)):
-        main(['parsereport.py', 'REQ', 'OPT1', 'OPT2', 'OPT3',
-              '-a', 'FOO', '-m', 'MULT1', '-m', 'MULT2', ])
+        tests = [
+            ['template.py', 'REQ', ],
+            ['template.py', 'REQ', 'OPT1', ],
+            ['template.py', 'REQ', 'OPT1', 'OPT2', 'OPT3',
+             '-a', 'FOO', '-m', 'MULT1', '-m', 'MULT2', ],
+            ['template.py',
+             '-a', 'BAR', '-m', 'MULT1', '-m', 'MULT2',
+             'REQ', 'OPT1', 'OPT2', 'OPT3', ],
+            ['template.py', '-?', ],
+        ]
+        for test in tests:
+            print(f"# {' '.join(test)}")
+            main(test)
+            print()
     else:
         main(sys.argv)
