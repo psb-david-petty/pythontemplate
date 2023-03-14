@@ -46,7 +46,7 @@ For this example, with a PAT of `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`, the 
 
 Notes about PATs:
 
-- PATs are accessed under Account Settings > Developer Settings > Personal Access Tokens > Tokens (classic).
+- PATs are created under Account Settings > Developer Settings > Personal Access Tokens > Tokens (classic). Once created, you must copy a PAT before closing that page, because they cannot be accessed after that point except to be deleted.
 - PATs are set with an expiration date when created. As long as they have not expired (or been deleted), the `url` that includes a PAT can be used *to access any repo with you as the user* without logging in. **Keep them secure and do not give general access to `.git/config` files that include them.**
 - You cannot include a PAT in any documents pushed to the repo, or the PAT will be deleted by Github.
 
